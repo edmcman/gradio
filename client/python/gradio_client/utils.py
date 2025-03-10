@@ -1172,6 +1172,7 @@ def is_file_obj_with_meta(d) -> bool:
         and "path" in d
         and isinstance(d["path"], str)
         and "meta" in d
+        and hasattr(d["meta"], "get")
         and d["meta"].get("_type", "") == "gradio.FileData"
     )
 
